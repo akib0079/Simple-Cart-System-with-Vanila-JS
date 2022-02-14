@@ -137,10 +137,10 @@ document.getElementById('btnPromo').addEventListener('click', function(){
 })
 
 
+// calculating product price on the change of the input.
+
 function calculateInputChange(priceID, Price){
     let inputValue = event.target.value;
-
-    const productPriceTxt = document.getElementById(priceID).innerText;
     const productUpdatedPrice = Price * inputValue;
 
     document.getElementById(priceID).innerText = productUpdatedPrice;

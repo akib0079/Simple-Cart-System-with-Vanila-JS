@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>E-commerce Cart</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS v5.0.2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- Style.css linked here -->
+<link rel="stylesheet" href="style.css">
+
+<!-- BOX ICON LINKED HERE -->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    
+<section class="cartSection">
+    <div class="container-fluid cartSectionInner">
+        <div class="row g-0">
+            <div class="col-md-8">
+
+            <!-- Cart header -->
+            <div class="cartInnerHeader d-flex align-items-center justify-content-between">
+                <h3>Shopping Cart</h3>
+                <h5><span id="itemNums">3</span> items</h5>
+            </div>
+            <!-- Cart header -->
+
+            <!-- Cart table header -->
+            <div class="row cartInner g-0">
+                <div class="col-md-6 col-6">
+                    <p class="details">Product Details</p>
+                </div>
+                <div class="col-md-4 col-4">
+                    <p class="details">Quantity</p>
+                </div>
+                <div class="col-md-2 col-2">
+                    <p class="details">Price</p>
+                </div>
+            </div>
+            <!-- Cart table header -->
+
+            <!-- First Product! -->
+
+            <div  id="products" class="row g-0 products">
+                <div class="col-md-6 col-6">
+                    <div class="product d-flex align-items-center">
+                        <img class="productImage img-fluid rounded-3" src="image/phon case.webp" alt="">
+                        <div class="productNames ms-4">
+                            <h5>IPhone 12 Case</h5>
+                            <p>Phone Cases</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4 col-4">
+                    <!-- input -->
+                    <button id="caseMinus" class="btnMinus">-</button>
+                    <input id="caseInput" type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="quntInput" size="4" pattern="" inputmode="">
+                    <button id="casePlus" class="btnPlus">+</button>
+                    <!-- input -->
+                </div>
+                <div class="col-md-2 price mt-4 col-2">
+                    <h5>$<span id="casePrice">99</span></h5>
+                </div>
+            </div>
+
+            <!-- First product -->
+
+            <!-- Second product -->
+
+            <div id="products" class="row g-0 products">
+                <div class="col-md-6 col-6">
+                    <div class="product d-flex align-items-center">
+                        <img class="productImage img-fluid rounded-3" src="image/watch (1).webp" alt="">
+                        <div class="productNames ms-4">
+                            <h5>Apple Watch</h5>
+                            <p>Watch</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  mt-4 col-4">
+                    <!-- input -->
+                    <button id="watchMinus" class="btnMinus">-</button>
+                    <input id="watchInput"  type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="quntInput" size="4" pattern="" inputmode="">
+                    <button id="watchPlus" class="btnPlus">+</button>
+                    <!-- input -->
+                </div>
+                <div class="col-md-2 price mt-4 col-2">
+                    <h5>$<span id="watchPrice">600</span></h5>
+                </div>
+            </div>
+
+            <!-- Second product -->
+
+            <!-- Third product start-->
+
+            <div id="products" class="row g-0 products">
+                <div class="col-md-6 col-6">
+                    <div class="product d-flex align-items-center">
+                        <img class="productImage img-fluid rounded-3" src="image/airpodsPro.webp" alt="">
+                        <div class="productNames ms-4">
+                            <h5>Apple AirPods</h5>
+                            <p>HeadPhones</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  mt-4 col-4">
+                    <!-- input -->
+                    <button id="podsMinus" class="btnMinus">-</button>
+                    <input id="podsInput" type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="quntInput" size="4" pattern="" inputmode="">
+                    <button id="podsPlus" class="btnPlus">+</button>
+                    <!-- input -->
+                </div>
+                <div class="col-md-2 price mt-4 col-2">
+                    <h5>$<span id="podsPrice">399</span></h5>
+                </div>
+            </div>
+
+            <!-- Third product end-->
+
+
+                
+            </div>
+            <div class="col-md-4 bg-light">
+                <div class="orderSummaryInner">
+                    <!-- Summary header -->
+                    <div class="orderSummaryHeader">
+                        <h3>Order Summary</h3>
+                    </div>
+                    <!-- Summary header -->
+
+                    <!-- AllItems Price -->
+                    <div class="allItemPrice d-flex align-items-center justify-content-between">
+                        <h6>Item's Price</h6>
+                        <h5>$<span id="itemsPrice">1899</span></h5>
+                    </div>
+                    <div class="ShippingPrice d-flex align-items-center justify-content-between">
+                        <h5>TAX</h5>
+                        <h5>$<span id="taxCost">299</span></h5>
+                    </div>
+                    <!-- AllItems Price -->
+
+                    <!-- Promo code -->
+
+                    <form class="promo" name="formName" onsubmit="return false">
+                        <label class="form-label">Promo Code</label>
+                        <input type="text" id="promoInput" class="form-control">
+                        <div id="promoCode" class="form-text">Enter your promo code: *Gadgets* for 40% discount.</div>
+                        <button id="btnPromo" class="btnPromo">UPDATE</button>
+                    </form>
+
+                    <!-- Promo code -->
+
+                    <!-- total cost -->
+
+                    <div class="TotalPrice d-flex align-items-center justify-content-between">
+                        <h5>Total Cost</h5>
+                        <h5>$<span id="totalCost">2399</span></h5>
+                    </div>
+                    <button class="checkoutBtn">Proceed To checkout <i class='bx bxs-basket'></i></button>
+
+                    <!-- total cost -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main JS linked here -->
+<script src="JS/main.js"></script>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

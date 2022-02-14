@@ -137,4 +137,28 @@ document.getElementById('btnPromo').addEventListener('click', function(){
 })
 
 
+function calculateInputChange(priceID, Price){
+    let inputValue = event.target.value;
+
+    const productPriceTxt = document.getElementById(priceID).innerText;
+    const productUpdatedPrice = Price * inputValue;
+
+    document.getElementById(priceID).innerText = productUpdatedPrice;
+
+    calculateTotal();
+}
+
+
+document.getElementById('caseInput').addEventListener('change', function(event){
+    calculateInputChange('casePrice', 99);
+})
+
+document.getElementById('watchInput').addEventListener('change', function(event){
+    calculateInputChange('watchPrice', 600);
+})
+document.getElementById('podsInput').addEventListener('change', function(event){
+    calculateInputChange('podsPrice', 399);
+})
+
+
 

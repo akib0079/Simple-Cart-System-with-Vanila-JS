@@ -60,9 +60,15 @@ body {
   font-weight: 600;
 }
 
-.productNames p {
+.productNames > p {
   font-weight: 700;
   color: #5d51dc;
+}
+
+.removeProduct {
+  font-weight: 500 !important;
+  color: rgba(128, 128, 128, 0.99) !important;
+  cursor: pointer;
 }
 
 .quntInput {

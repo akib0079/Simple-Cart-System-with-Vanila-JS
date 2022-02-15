@@ -63,16 +63,46 @@ document.getElementById('caseMinus').addEventListener('click',function(){
 // handling case product increasing decreasing ENDDDD.
 
 
+// calculating product price on the change of the input.
+
+function calculateInputChange(priceID, Price){
+    let inputValue = event.target.value;
+    const productUpdatedPrice = Price * inputValue;
+
+    document.getElementById(priceID).innerText = productUpdatedPrice;
+
+    calculateTotal();
+}
+
+
+document.getElementById('caseInput').addEventListener('change', function(event){
+    calculateInputChange('casePrice', 99);
+})
+
+document.getElementById('watchInput').addEventListener('change', function(event){
+    calculateInputChange('watchPrice', 600);
+})
+document.getElementById('podsInput').addEventListener('change', function(event){
+    calculateInputChange('podsPrice', 399);
+})
+
+
+// calculating one product price.
+function CalcproductPrice(inputId,price){
+    const inputNum = document.getElementById(inputId).value;
+    const itemPrice = price;
+
+    const productPrice = inputNum * price;
+    return productPrice;
+
+}
+
+
 // Calculate total function.
 function calculateTotal(){
-    const casePriceText = document.getElementById('casePrice').innerText;
-    const casePrice = parseInt(casePriceText);
-
-    const watchPriceText = document.getElementById('watchPrice').innerText;
-    const watchPrice = parseInt(watchPriceText);
-
-    const podsPriceText = document.getElementById('podsPrice').innerText;
-    const podsPrice = parseInt(podsPriceText);
+    const casePrice = CalcproductPrice('caseInput', 99);
+    const watchPrice = CalcproductPrice('watchInput', 600);
+    const podsPrice = CalcproductPrice('podsInput', 399);
 
     const itemsPrice = casePrice + watchPrice + podsPrice;
     document.getElementById('itemsPrice').innerText = itemsPrice;
@@ -100,26 +130,6 @@ function calculateTotal(){
 
 }
 
-//Updating items price & Calculation Total.
-
-const casePriceText = document.getElementById('casePrice').innerText;
-const casePrice = parseInt(casePriceText);
-
-const watchPriceText = document.getElementById('watchPrice').innerText;
-const watchPrice = parseInt(watchPriceText);
-
-const podsPriceText = document.getElementById('podsPrice').innerText;
-const podsPrice = parseInt(podsPriceText);
-
-const itemsPrice = casePrice + watchPrice + podsPrice;
-document.getElementById('itemsPrice').innerText = itemsPrice;
-
-const tax = itemsPrice * 4 / 100;
-document.getElementById('taxCost').innerText = tax;
-
-let totalPrice =  itemsPrice + tax;
-document.getElementById('totalCost').innerText = totalPrice;
-
 
 // Promo code.
 document.getElementById('btnPromo').addEventListener('click', function(){
@@ -136,29 +146,6 @@ document.getElementById('btnPromo').addEventListener('click', function(){
     }
 })
 
-
-// calculating product price on the change of the input.
-
-function calculateInputChange(priceID, Price){
-    let inputValue = event.target.value;
-    const productUpdatedPrice = Price * inputValue;
-
-    document.getElementById(priceID).innerText = productUpdatedPrice;
-
-    calculateTotal();
-}
-
-
-document.getElementById('caseInput').addEventListener('change', function(event){
-    calculateInputChange('casePrice', 99);
-})
-
-document.getElementById('watchInput').addEventListener('change', function(event){
-    calculateInputChange('watchPrice', 600);
-})
-document.getElementById('podsInput').addEventListener('change', function(event){
-    calculateInputChange('podsPrice', 399);
-})
 
 
 
